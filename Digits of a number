@@ -1,0 +1,18 @@
+public class LastDigitWithTests {
+    public static void main(String[] args) {
+        launchTestsAndPrint(LastDigitTest.class);
+    }
+}
+
+class LastDigitTest {
+	// Use the correct annotation to mark this as a JUnit test
+    @Test 
+void testLastDigit() {
+    int number = 2025;
+    int expected = 5;
+
+    int actual = LastDigit.lastDigit(number);
+
+    assertEquals(expected, actual);
+}
+}
