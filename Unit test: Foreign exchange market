@@ -1,0 +1,22 @@
+class Main {
+    public static void main(String[] args) {
+        launchMockitoTestsAndPrint(ExchangeAppTest.class);
+    }
+}
+
+class ExchangeAppTest {
+    @Test
+    void convertEuroTo_convertsTST() {
+        // Create a mock object for the EuropeanCentralBankServer
+        EuropeanCentralBankServer bank = mock(EuropeanCentralBankServer.class);
+        ExchangeApp exchangeApp = new ExchangeApp(bank);
+        double euroAmount = 100;
+        // Stub the mock to return a value for given input
+        when(bank.getRateEuroTo("TST")).thenReturn(12345.0);
+        double tstAmount = exchangeApp.convertEuroTo("TST", euroAmount);
+
+        System.out.println("Converted " + euroAmount + " EUR to " + tstAmount + " TST.");
+        // Assert on the exact expected value of tstAmount
+        assertEquals(1234500, tstAmount);
+    }
+}
