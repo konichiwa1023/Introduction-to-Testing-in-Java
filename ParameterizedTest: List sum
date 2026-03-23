@@ -1,0 +1,25 @@
+public class SumOfList {
+    public static void main(String[] args) {
+		launchTestsAndPrint(ListSumTest.class);
+    }
+}
+
+class ListSumTest {
+    @ParameterizedTest
+    // Invoke the correct annotation for a method source
+    @MethodSource("listsAndSums") 
+    void sumList_sumsList(List<Integer> list, int expectedSum) {
+        int actualSum = ListSum.sumList(list);
+
+        assertEquals(expectedSum, actualSum);
+    }
+
+    private static List<Arguments> listsAndSums() {
+     return List.of(
+        Arguments.of(List.of(1, 2, 3, 4), 10),
+        Arguments.of(List.of(-5, 5), 0),
+        Arguments.of(List.of(), 0),
+        Arguments.of(null, 0)
+    );
+}
+}
