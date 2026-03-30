@@ -1,0 +1,7 @@
+SELECT 
+    first_name,
+    last_name,
+    first_vote_date,
+    -- Use DATENAME to get the day of the week
+    DATENAME(weekday, first_vote_date) AS first_vote_dayofweek
+FROM voters;
