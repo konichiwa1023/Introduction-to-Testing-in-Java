@@ -1,0 +1,7 @@
+SELECT 
+	first_name,
+	last_name,
+    YEAR(first_vote_date) AS first_vote_year, 
+	MONTH(first_vote_date) AS first_vote_month,
+	DATEFROMPARTS(YEAR(first_vote_date), MONTH(first_vote_date), 1) AS first_vote_starting_month
+FROM voters
