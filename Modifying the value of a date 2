@@ -1,0 +1,5 @@
+SELECT 
+    first_name,
+    first_vote_date,
+    DATEADD(DAY, 5, first_vote_date) AS processing_vote_date
+FROM voters;
