@@ -1,0 +1,3 @@
+
+	-- Subtract 476 days from the current date
+	SELECT DATEADD(DAY, -476, GETDATE());
