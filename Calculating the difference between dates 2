@@ -1,0 +1,2 @@
+SELECT 
+    DATEDIFF(WEEK, '2019-01-01', GETDATE()) AS weeks_passed;
