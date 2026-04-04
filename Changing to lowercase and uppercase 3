@@ -1,0 +1,11 @@
+SELECT 
+    company,
+    bean_type,
+    broad_bean_origin,
+    'The company ' + UPPER(company) 
+        + ' uses beans of type "' + bean_type 
+        + '", originating from ' + UPPER(broad_bean_origin) + '.'
+FROM ratings
+WHERE 
+    LOWER(broad_bean_origin) NOT LIKE '%unknown%'
+    AND LOWER(bean_type) NOT LIKE '%unknown%';
